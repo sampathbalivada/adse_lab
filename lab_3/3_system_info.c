@@ -10,8 +10,10 @@
 #include <netinet/in.h>  // For sockaddr_in
 #include <arpa/inet.h>   // For inet_ntop
 #include <sys/socket.h>  // For AF_INET, AF_INET6
+#include <netdb.h>       // For getnameinfo, NI_MAXHOST, etc.
 #include <net/if.h>      // For IFF_UP
 #include <linux/if_link.h> // For RTMGRP_LINK
+#include <linux/if_packet.h> // For struct sockaddr_ll
 #include <dirent.h>      // For opendir, readdir, closedir
 #include <ctype.h>       // For isdigit
 

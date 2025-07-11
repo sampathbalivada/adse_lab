@@ -210,6 +210,100 @@ A keylogger implemented as a Linux kernel module.
 
 > Could not execute as I do not have a physical system at present to generate Keyboard Interrupts. Accessing through SSH.
 
+### Lab 8: Add tables to PostgreSQL and retrieve them using a Python script
+
+- [`8_db_client.py`][./lab_8/8_db_client.py]
+- [`8_sql_script.sql`][./lab_8/8_sql_script.sql]
+
+<details>
+
+<summary>Program Output</summary>
+
+```text
+
+--- Records from Employees ---
+employee_id          | first_name           | last_name            | email                | phone_number         | hire_date            | job_id               | salary               | department_id
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1                    | John                 | Doe                  | john.doe@example.com | 123-456-7890         | 2023-01-15           | IT_PROG              | 60000.00             | 1
+2                    | Jane                 | Smith                | jane.smith@example.com | 987-654-3210         | 2022-11-20           | SA_REP               | 75000.00             | 2
+3                    | Peter                | Jones                | peter.jones@example.com | 555-123-4567         | 2023-03-10           | MK_MGR               | 90000.00             | 3
+4                    | Mary                 | Johnson              | mary.johnson@example.com | 111-222-3333         | 2023-05-01           | HR_REP               | 55000.00             | 4
+5                    | David                | Williams             | david.williams@example.com | 444-555-6666         | 2021-09-01           | FI_ACCOUNT           | 65000.00             | 5
+6                    | Emily                | Brown                | emily.brown@example.com | 777-888-9999         | 2023-08-12           | AD_VP                | 120000.00            | 1
+7                    | Michael              | Davis                | michael.davis@example.com | 222-333-4444         | 2020-07-18           | PU_CLERK             | 45000.00             | 2
+8                    | Jessica              | Miller               | jessica.miller@example.com | 666-777-8888         | 2023-10-25           | SH_CLERK             | 40000.00             | 3
+9                    | Christopher          | Wilson               | christopher.wilson@example.com | 999-000-1111         | 2022-02-14           | ST_MAN               | 80000.00             | 4
+10                   | Ashley               | Taylor               | ashley.taylor@example.com | 333-444-5555         | 2023-12-01           | IT_PROG              | 62000.00             | 1
+
+
+
+--- Records from Departments ---
+department_id        | department_name      | location_id
+---------------------------------------------------------------------
+1                    | IT                   | 1
+2                    | Sales                | 2
+3                    | Marketing            | 3
+4                    | Human Resources      | 4
+5                    | Finance              | 5
+6                    | Administration       | 1
+7                    | Purchasing           | 2
+8                    | Shipping             | 3
+9                    | Executive            | 4
+10                   | Public Relations     | 5
+
+
+
+--- Records from Locations ---
+location_id          | street_address       | postal_code          | city                 | state_province       | country_id
+------------------------------------------------------------------------------------------------------------------------------------------
+1                    | 123 Main St          | 12345                | New York             | NY                   | US
+2                    | 456 Oak Ave          | 54321                | Los Angeles          | CA                   | US
+3                    | 789 Pine St          | 98765                | London               | None                 | UK
+4                    | 321 Elm St           | 10101                | Toronto              | ON                   | CA
+5                    | 654 Maple Ave        | 20202                | Sydney               | NSW                  | AU
+6                    | 987 Birch St         | 30303                | Paris                | None                 | FR
+7                    | 111 Cedar St         | 40404                | Tokyo                | None                 | JP
+8                    | 222 Spruce St        | 50505                | Berlin               | None                 | DE
+9                    | 333 Willow St        | 60606                | Mumbai               | MH                   | IN
+10                   | 444 Aspen St         | 70707                | Sao Paulo            | SP                   | BR
+
+
+
+--- Records from Products ---
+product_id           | product_name         | description          | price                | stock_quantity       | is_available
+------------------------------------------------------------------------------------------------------------------------------------------
+1                    | Laptop               | A powerful laptop for all your computing needs. | 1200.00              | 50                   | True
+2                    | Smartphone           | The latest smartphone with a stunning display. | 800.00               | 100                  | True
+3                    | Headphones           | Noise-cancelling headphones for an immersive audio experience. | 250.00               | 200                  | True
+4                    | Keyboard             | A mechanical keyboard for a comfortable typing experience. | 100.00               | 150                  | True
+5                    | Mouse                | An ergonomic mouse for precise control. | 50.00                | 300                  | True
+6                    | Monitor              | A 4K monitor with vibrant colors. | 600.00               | 75                   | True
+7                    | Webcam               | A high-definition webcam for clear video calls. | 80.00                | 120                  | False
+8                    | Printer              | An all-in-one printer for your home or office. | 300.00               | 60                   | True
+9                    | Desk Chair           | A comfortable and adjustable desk chair. | 400.00               | 40                   | True
+10                   | External Hard Drive  | A portable hard drive for extra storage. | 150.00               | 250                  | True
+
+
+
+--- Records from Orders ---
+order_id             | customer_id          | order_date           | total_amount         | status
+-------------------------------------------------------------------------------------------------------------------
+1                    | 1                    | 2024-01-10 10:30:00  | 250.50               | Shipped
+2                    | 2                    | 2024-01-12 14:00:00  | 120.00               | Delivered
+3                    | 3                    | 2024-01-15 09:00:00  | 500.75               | Pending
+4                    | 4                    | 2024-01-18 11:45:00  | 75.20                | Shipped
+5                    | 5                    | 2024-01-20 16:20:00  | 300.00               | Processing
+6                    | 1                    | 2024-01-22 13:15:00  | 150.00               | Shipped
+7                    | 3                    | 2024-01-25 10:00:00  | 600.00               | Delivered
+8                    | 2                    | 2024-01-28 18:00:00  | 90.50                | Pending
+9                    | 4                    | 2024-02-01 12:30:00  | 400.25               | Shipped
+10                   | 5                    | 2024-02-03 15:00:00  | 200.00               | Processing
+
+
+Database connection closed.
+```
+</details>
+
 ### Lab 9: Bitmap Index Simulation
 A Python script simulating a bitmap index.
 - [`bitmap_simulation.py`](./lab_9/bitmap_simulation.py)

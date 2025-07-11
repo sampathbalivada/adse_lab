@@ -212,8 +212,8 @@ A keylogger implemented as a Linux kernel module.
 
 ### Lab 8: Add tables to PostgreSQL and retrieve them using a Python script
 
-- [`8_db_client.py`][./lab_8/8_db_client.py]
-- [`8_sql_script.sql`][./lab_8/8_sql_script.sql]
+- [`8_db_client.py`](./lab_8/8_db_client.py)
+- [`8_sql_script.sql`](./lab_8/8_sql_script.sql)
 
 <details>
 
